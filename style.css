@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-bg: hsl(210, 46%, 95%);
+  --clr-head: hsl(217, 19%, 35%);
+  --clr-date: hsl(214, 17%, 51%);
+  --clr-share: hsl(214, 17%, 51%);
+  --clr-btn: hsl(212, 23%, 69%);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-bg);
+  color: var(--clr-head);
+  font-family: 'Manrope', sans-serif;
+  overflow-y: scroll;
+}
+
+main {
+  background: white;
+  height: 20em;
+  display: flex;
+  max-width: 56em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  margin: 2em;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2) ;
+}
+
+date {
+  color: var(--clr-date);
+}
+
+.left {
+  width: 60rem;
+  overflow: hidden;
+}
+
+.right {
+  padding: 2em 3em;
+  display: flex;
+  flex-direction :column;
+  gap: 1em;
+}
+
+.left img{
+  width: 24em;
+  transform: scale(1.1);
+}
+
+.dp img{
+  height: 3em;
+  border-radius: 50%;
+}
+
+.right .profile_wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right h2 {
+  color: var(--clr-head);
+}
+
+.dp {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.name_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.share button {
+  all: unset;
+  background: var(--clr-bg);
+  padding: 0.25em 0.5em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.share:hover button{
+  background: var(--clr-share);
+}
+
+.share:hover svg {
+  color: white;
+}
+
+.share:hover .callout, .share:focus-within .callout{
+  display: flex;
+}
+
+.callout img{
+  cursor: pointer;
+}
+
+.share:hover .triangle, .share:focus-within .triangle {
+  display: block;
+}
+
+button svg {
+  color: var(--clr-head);
+}
+
+.share {
+  position: relative;
+}
+
+.callout {
+  position: absolute;
+  top: -4em;
+  left: -6em;
+  display:none;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0 1em;
+  background: var(--clr-head);
+  border-radius: 4px;
+  color: white;
+  height: 3em;
+  z-index: 2;
+}
+
+.triangle {
+  display: none;
+  height: 2em;
+  width: 2em;
+  background: var(--clr-head);
+  position: absolute;
+  top: -2.5em;
+  transform: rotate(45deg);
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    max-width: 24em;
+    height: fit-content;
+  }
+  .left {
+    width: 100%;
+  }
+  .left img {
+    width: 100%;
+  }
+  .right{
+    padding: 1em;
+  }
+  .callout {
+    left: -7em;
+  }
+}
+
+@media (max-width: 368px){
+  main {
+    margin: 0;
+  }
+  h2 {
+    font-size: 1.25em;
+  }
+}
